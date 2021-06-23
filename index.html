@@ -31,7 +31,7 @@
             <div class="container">
 
                 <!-- add task popup start -->
-                <div id="task-box" class="add-task">
+                <div id="task-box" class="op-0">
 
                     <div class="row justify-between align-start">
                         <p class="add-task-title">Nuovo task</p>
@@ -45,7 +45,7 @@
                     </select>
 
                     <label for="Tags">Nome Task</label>
-                    <input class="add-item" type="text" name="newtask" id="newtask" v-model="newTask" @keyup.enter="addTask(), hideTaskBox()" placeholder="Scrivi qui il tuo task">
+                    <input class="add-item" type="text" name="newtask" id="newtask" v-model="newTask" @keyup.enter="addTask()" placeholder="Scrivi qui il tuo task">
 
                     <button @click="addTask(), hideTaskBox()">aggiungi task</button>
                 </div>

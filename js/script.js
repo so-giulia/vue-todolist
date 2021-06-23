@@ -57,18 +57,23 @@ const app = new Vue(
                 return month
             },
             addTask(){
-                this.tasks.push(this.newTask);
-                this.newTask = '';
+                if(this.newTask == ''){
+                    alert("Non puoi inserire un task vuoto");
+                }else{
+                    this.tasks.push(this.newTask);
+                    this.newTask = '';
+                    document.getElementById("task-box").className = 'op-0';
+                }
             },
             removeTask(index){
                 console.log(index);
                 this.tasks.splice(index, 1);
             },
             showTaskBox(){
-                return document.getElementById("task-box").className = 'add-task-request';
+                document.getElementById("task-box").className = 'op-1 add-task-request';
             },
             hideTaskBox(){
-                return document.getElementById("task-box").className = 'add-task';
+                document.getElementById("task-box").className = 'op-0';
             }
         }
     }
