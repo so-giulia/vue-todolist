@@ -22,14 +22,11 @@ html{font-size:14px;}
 
 .self-end{align-self: flex-end;}
 
-.grow{flex-grow: 1;}
-
-
 /* ———————————————————————————— */
 /* —————————— Layout —————————— */
 /* ———————————————————————————— */
 
-header, footer, main{width:100%}
+/* header, footer, main{width:100%} */
 header{height:80px;}
 footer{height:150px;}
 .app{height:100vh;}
@@ -37,6 +34,15 @@ footer{height:150px;}
 main{
     font-family:'Poppins', sans-serif;
     padding:30px 0;
+}
+
+.main-top{
+    height: 50px;
+}
+
+.main-bottom{
+    overflow-y: scroll;
+    height:calc(100vh - 410px)
 }
 
 .container{
@@ -85,6 +91,7 @@ h1{
 /* —————————— Main —————————— */
 /* —————————————————————————— */
 
+main{overflow-y: scroll;}
 .main-top{
     margin-bottom:30px;
 }
@@ -208,6 +215,15 @@ input[type="checkbox"]:checked:before {
 /* —————————— Footer —————————— */
 /* ———————————————————————————— */
 
+footer{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    text-align: center;
+    z-index: 2;
+}
+
 .add{
     width: 80px;
     height: 80px;
@@ -233,3 +249,4 @@ input[type="checkbox"]:checked:before {
 
     transition: all .3s cubic-bezier(.43,.01,.39,1.01);
 }
+

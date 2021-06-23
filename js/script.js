@@ -63,7 +63,7 @@ const app = new Vue(
                     this.tasks.push(this.newTask);
                     this.newTask = '';
                     document.getElementById("task-box").className = 'op-0';
-                    this.hideLayover();
+                    this.hideTaskBox();
                 }
             },
             removeTask(index){
@@ -76,9 +76,6 @@ const app = new Vue(
             },
             hideTaskBox(){
                 document.getElementById("task-box").className = 'op-0';
-                document.getElementById("layover").className = 'lay-inactive';
-            },
-            hideLayover(){
                 document.getElementById("layover").className = 'lay-inactive';
             }
         }
