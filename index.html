@@ -38,8 +38,8 @@
                         <img class="close" @click="hideTaskBox()" src="img/cross.svg" alt="cross mark out svg">
                     </div>
 
-                    <label for="Tags">Tags</label>
-                    <select class="add-item" name="tag" id="tag">
+                    <label for="tags">Tags</label>
+                    <select class="add-item" name="tags" id="tags">
                         <option value="" class="placeholder-select">Seleziona una tag</option>
                         <option :value="key" v-for="(item, key) in tags">{{item}}</option>
                     </select>
@@ -67,10 +67,12 @@
                 <!-- tasks container start -->
                 <div class="main-bottom">
                     <ul class="tasks" v-if="tasks.length > 0">
-                        <li class="row justify-between align-center" v-for="(item, index) in tasks">
+                        <!-- task start -->
+                        <li id="myTask" class="row justify-between align-center" v-for="(item, index) in tasks">
                             {{ item }}
                             <input type="checkbox" @click="removeTask(index)">
                         </li>
+                        <!-- task end -->
                     </ul>
                     <h2 v-else>Non ci sono tasks</h2>
                 </div>

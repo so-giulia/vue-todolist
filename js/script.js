@@ -75,7 +75,7 @@ const app = new Vue(
             },
             hideTaskBox(){
                 document.getElementById("task-box").className = 'op-0';
-                document.getElementById("layover").className = 'layover';
+                document.getElementById("layover").className = 'lay-inactive';
             }
         }
     }
