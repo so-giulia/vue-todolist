@@ -5,19 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Vue -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&family=Quicksand&display=swap" rel="stylesheet">
 
     <!-- My Css -->
     <link rel="stylesheet" href="css/style.css">
 
-    <title>To Do List</title>
+    <!-- Vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+
+    <title>Tasks App</title>
 </head>
 <body>
-    <div id="root">
-        <main>
-            <h1>{{test}}</h1>
+    <div id="root" class="app row row-vert align-start">
+        <!-- header start -->
+        <header class="row justify-center align-center">
+            <h1>tasks</h1>
+        </header>
+        <!-- header end -->
+
+        <!-- main start -->
+        <main class="grow">
+            <div class="container">
+                <!-- date start -->
+                <div class="main-top">
+                    <p>{{ dataDiOggi() }}</p>
+                </div>
+                <!-- date end -->
+
+                <!-- tasks container start -->
+                <div class="main-bottom">
+                    <ul class="tasks">
+                        <li class="row justify-between align-center">
+                            <p>Lorem ipsum dolor sit</p>
+                            <input type="checkbox">
+                        </li>
+                        <li class="row justify-between align-center">
+                            <p>Lorem ipsum dolor sit</p>
+                            <input type="checkbox">
+                        </li>
+                        <li class="row justify-between align-center">
+                            <p>Lorem ipsum dolor sit</p>
+                            <input type="checkbox">
+                        </li>
+                        <li class="row justify-between align-center">
+                            <p>Lorem ipsum dolor sit</p>
+                            <input type="checkbox">
+                        </li>
+                    </ul>
+                </div>
+                <!-- tasks container end -->
+            </div>
         </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <footer class="row justify-center align-center self-end">
+            <div class="test">+</div>
+        </footer>
+        <!-- footer end -->
     </div>
 
 

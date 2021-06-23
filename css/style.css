@@ -3,3 +3,90 @@
     padding:0;
     box-sizing: border-box;
 }
+
+/* —————————————————————————— */
+/* —————————— Flex —————————— */
+/* —————————————————————————— */
+
+.row {display: flex; flex-wrap: wrap;}
+.row-vert {flex-direction:column;}
+
+.justify-evenly {justify-content: space-evenly;}
+.justify-center {justify-content: center;}
+.justify-between {justify-content: space-between;}
+.align-start {align-items: flex-start;}
+.align-center {align-items: center;}
+.self-end{align-self: flex-end;}
+
+
+.grow{flex-grow: 1;}
+
+
+
+/* ———————————————————————————— */
+/* —————————— Layout —————————— */
+/* ———————————————————————————— */
+
+header, footer, main{width:100%}
+.app{height:100vh;}
+
+main{padding:30px 0;}
+
+.container{
+    width:70%;
+    margin:auto;
+
+    /* debug */
+    border:1px solid black;
+    padding:30px;
+}
+
+.main-top{
+    background-color: rgba(138, 43, 226, .1);
+}
+
+.main-bottom{
+    background-color: rgba(173, 255, 47, .2);
+}
+
+/* ———————————————————————————— */
+/* —————————— Header —————————— */
+/* ———————————————————————————— */
+
+header{
+    height:80px;
+    
+    /* debug */
+    background-color: #ccc;
+}
+
+h1{
+    font-family: 'Quicksand', sans-serif;
+    font-size:3rem;
+}
+
+/* —————————————————————————— */
+/* —————————— Main —————————— */
+/* —————————————————————————— */
+
+main{
+    /* debug */
+    background-color: #ddd;
+}
+
+.tasks li{
+    list-style: none;
+    padding:20px 0;
+    border-bottom:1px solid lightgray;
+}
+
+/* ———————————————————————————— */
+/* —————————— Footer —————————— */
+/* ———————————————————————————— */
+
+footer{
+    height:80px;
+    
+    /* debug */
+    background-color: #bbb;
+}
