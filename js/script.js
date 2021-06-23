@@ -28,6 +28,17 @@ const app = new Vue(
                 "Venerdì",
                 "Sabato",
                 "Domenica"
+            ],
+            newTask:'',
+            tasks:[
+                "Comprare farro",
+                "Rispondere alla mail di Matteo",
+                "Preparare borsa per il mare"
+            ],
+            tags:[
+                "Work",
+                "Home",
+                "Personal"
             ]
         },
         methods: {
@@ -44,6 +55,16 @@ const app = new Vue(
                 
                 const month = `${m} ${newDate2.getFullYear()}`;
                 return month
+            },
+            addTask(){
+                this.tasks.push(this.newTask);
+                this.newTask = '';
+            },
+            showTaskBox(){
+                return document.getElementById("task-box").className = 'add-task-request';
+            },
+            hideTaskBox(){
+                return document.getElementById("task-box").className = 'add-task';
             }
         }
     }

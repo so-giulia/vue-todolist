@@ -29,6 +29,32 @@
         <!-- main start -->
         <main class="grow">
             <div class="container">
+
+                <!-- add task popup start -->
+                <div id="task-box" class="add-task">
+
+                    <div class="row justify-between align-start">
+                        <p class="add-task-title">Nuovo task</p>
+                        <div class="close" @click="hideTaskBox()">&cross;</div>
+                    </div>
+
+                    <label for="Tags">Tags</label>
+                    <select class="add-item" name="tag" id="tag">
+                        <option value="" class="placeholder-select">Seleziona una tag</option>
+                        <option :value="key" v-for="(item, key) in tags">{{item}}</option>
+                    </select>
+
+                    <label for="Tags">Nome Task</label>
+                    <input class="add-item" type="text" name="newtask" id="newtask" v-model="newTask" @keyup.enter="addTask(), hideTaskBox()" placeholder="Scrivi qui il tuo task">
+
+                    <button @click="addTask(), hideTaskBox()">aggiungi task</button>
+                </div>
+                <!-- add task popup end -->
+
+                <!-- layover start -->
+                <div class="layover"></div>
+                <!-- layover end -->
+
                 <!-- date start -->
                 <div class="main-top">
                     <p class="day">{{ currentDay() }}</p>
@@ -39,20 +65,8 @@
                 <!-- tasks container start -->
                 <div class="main-bottom">
                     <ul class="tasks">
-                        <li class="row justify-between align-center">
-                            <p>Lorem ipsum dolor sit</p>
-                            <input type="checkbox">
-                        </li>
-                        <li class="row justify-between align-center">
-                            <p>Lorem ipsum dolor sit</p>
-                            <input type="checkbox">
-                        </li>
-                        <li class="row justify-between align-center">
-                            <p>Lorem ipsum dolor sit</p>
-                            <input type="checkbox">
-                        </li>
-                        <li class="row justify-between align-center">
-                            <p>Lorem ipsum dolor sit</p>
+                        <li class="row justify-between align-center" v-for="item in tasks">
+                            {{ item }}
                             <input type="checkbox">
                         </li>
                     </ul>
@@ -64,7 +78,7 @@
 
         <!-- footer start -->
         <footer class="row justify-center align-start self-end">
-            <button class="add">+</button>
+            <button class="add" @click="showTaskBox()">+</button>
         </footer>
         <!-- footer end -->
     </div>
