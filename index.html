@@ -8,7 +8,7 @@
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&family=Quicksand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&family=Quicksand&display=swap" rel="stylesheet">
 
     <!-- My Css -->
     <link rel="stylesheet" href="css/style.css">
@@ -31,7 +31,8 @@
             <div class="container">
                 <!-- date start -->
                 <div class="main-top">
-                    <p>{{ dataDiOggi() }}</p>
+                    <p class="day">{{ currentDay() }}</p>
+                    <p class="month">{{ currentMonth() }}</p>
                 </div>
                 <!-- date end -->
 
@@ -62,8 +63,8 @@
         <!-- main end -->
 
         <!-- footer start -->
-        <footer class="row justify-center align-center self-end">
-            <div class="test">+</div>
+        <footer class="row justify-center align-start self-end">
+            <button class="add">+</button>
         </footer>
         <!-- footer end -->
     </div>

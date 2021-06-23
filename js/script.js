@@ -6,7 +6,7 @@ const app = new Vue(
     {
         el: '#root',
         data:{
-            mesi:[
+            months:[
                 "Gennaio",
                 "Febbraio",
                 "Marzo",
@@ -20,7 +20,7 @@ const app = new Vue(
                 "Novembre",
                 "Dicembre"
             ],
-            giorni:[
+            days:[
                 "Lunedì",
                 "Martedì",
                 "Mercoledì",
@@ -31,13 +31,19 @@ const app = new Vue(
             ]
         },
         methods: {
-            dataDiOggi() {
-              const d = new Date();
-              let mese = this.mesi[d.getMonth()];
-              let giorno = this.giorni[d.getDay()];
+            currentDay() {
+              const newDate = new Date();
+              let d = this.days[newDate.getDay()];
               
-              const data = `${giorno}, ${d.getMonth()} ${mese} ${d.getFullYear()}`;
-              return data;
+              const today = `${d} ${newDate.getDay()}`;
+              return today
+            },
+            currentMonth() {
+                const newDate2 = new Date();
+                let m = this.months[newDate2.getMonth()];
+                
+                const month = `${m} ${newDate2.getFullYear()}`;
+                return month
             }
         }
     }
