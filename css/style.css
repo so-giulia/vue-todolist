@@ -67,7 +67,10 @@ main{
     margin-bottom:50px;
 }
 
-
+.main-bottom h2{
+    font-weight:300;
+    color:rgb(150, 150, 150);
+}
 
 /* ———————————————————————————— */
 /* —————————— Header —————————— */
@@ -147,6 +150,9 @@ input[type="checkbox"]:checked:before {
 
 .close{
     cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: block;
 }
 
 .add-task{

@@ -60,6 +60,10 @@ const app = new Vue(
                 this.tasks.push(this.newTask);
                 this.newTask = '';
             },
+            removeTask(index){
+                console.log(index);
+                this.tasks.splice(index, 1);
+            },
             showTaskBox(){
                 return document.getElementById("task-box").className = 'add-task-request';
             },

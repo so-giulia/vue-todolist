@@ -35,7 +35,7 @@
 
                     <div class="row justify-between align-start">
                         <p class="add-task-title">Nuovo task</p>
-                        <div class="close" @click="hideTaskBox()">&cross;</div>
+                        <img class="close" @click="hideTaskBox()" src="img/cross.svg" alt="cross mark out svg">
                     </div>
 
                     <label for="Tags">Tags</label>
@@ -64,12 +64,13 @@
 
                 <!-- tasks container start -->
                 <div class="main-bottom">
-                    <ul class="tasks">
-                        <li class="row justify-between align-center" v-for="item in tasks">
+                    <ul class="tasks" v-if="tasks.length > 0">
+                        <li class="row justify-between align-center" v-for="(item, index) in tasks">
                             {{ item }}
-                            <input type="checkbox">
+                            <input type="checkbox" @click="removeTask(index)">
                         </li>
                     </ul>
+                    <h2 v-else>Non ci sono tasks</h2>
                 </div>
                 <!-- tasks container end -->
             </div>
