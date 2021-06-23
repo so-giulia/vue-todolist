@@ -71,9 +71,11 @@ const app = new Vue(
             },
             showTaskBox(){
                 document.getElementById("task-box").className = 'op-1 add-task-request';
+                document.getElementById("layover").className = 'lay-active';
             },
             hideTaskBox(){
                 document.getElementById("task-box").className = 'op-0';
+                document.getElementById("layover").className = 'layover';
             }
         }
     }

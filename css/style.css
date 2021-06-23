@@ -185,7 +185,10 @@ input[type="checkbox"]:checked:before {
     transition:all .5s cubic-bezier(.55,.01,.19,.99);
 }
 
-.layover{transition: opacity .5s ease;}
+.lay-inactive{
+    opacity:0;
+    transition: opacity .5s ease;
+}
 
 .lay-active{
     position:absolute;
