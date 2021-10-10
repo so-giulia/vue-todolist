@@ -38,16 +38,10 @@
                         <img class="close" @click="hideTaskBox()" src="img/cross.svg" alt="cross mark out svg">
                     </div>
 
-                    <label for="tags">Tags</label>
-                    <select class="add-item" name="tags" id="tags">
-                        <option value="" class="placeholder-select">Seleziona una tag</option>
-                        <option :value="key" v-for="(item, key) in tags">{{item}}</option>
-                    </select>
-
                     <label for="Tags">Nome Task</label>
-                    <input class="add-item" type="text" name="newtask" id="newtask" v-model="newTask" @keyup.enter="addTask()" placeholder="Scrivi qui il tuo task">
+                    <input class="add-item" ref="text" type="text" name="newtask" id="newtask" v-model="newTask" @keyup.enter="addTask()" placeholder="Scrivi qui il tuo task">
 
-                    <button @click="addTask()">aggiungi task</button>
+                    <span class="btn" @click="addTask()">aggiungi task</span class="btn">
                 </div>
                 <!-- add task popup end -->
 
@@ -68,8 +62,8 @@
                 <div class="main-bottom">
                     <ul class="tasks" v-if="tasks.length > 0">
                         <!-- task start -->
-                        <li id="myTask" class="row justify-between align-center" v-for="(item, index) in tasks">
-                            {{ item }}
+                        <li id="myTask" class="row justify-between align-center" v-for="(task, index) in tasks">
+                            {{ task }}
                             <input type="checkbox" @click="removeTask(index)">
                         </li>
                         <!-- task end -->
@@ -83,7 +77,7 @@
 
         <!-- footer start -->
         <footer>
-            <button class="add" @click="showTaskBox()">+</button>
+            <span class="add" @click="showTaskBox()">+</span>
         </footer>
         <!-- footer end -->
     </div>

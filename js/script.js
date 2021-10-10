@@ -5,7 +5,10 @@
 const app = new Vue(
     {
         el: '#root',
+        day:'',
+        input:'',
         data:{
+            select:'',
             months:[
                 "Gennaio",
                 "Febbraio",
@@ -20,40 +23,34 @@ const app = new Vue(
                 "Novembre",
                 "Dicembre"
             ],
-            days:[
-                "Lunedì",
-                "Martedì",
-                "Mercoledì",
-                "Giovedì",
-                "Venerdì",
-                "Sabato",
-                "Domenica"
-            ],
             newTask:'',
             tasks:[
-                "Comprare farro",
-                "Rispondere alla mail di Matteo",
-                "Preparare borsa per il mare"
-            ],
-            tags:[
-                "Work",
-                "Home",
-                "Personal"
+                'Fare spesa',
+                'Rispondere alla mail di Matteo'
             ]
         },
         methods: {
-            currentDay() {
-              const newDate = new Date();
-              let d = this.days[newDate.getDay()];
-              
-              const today = `${d} ${newDate.getDay()}`;
-              return today
-            },
-            currentMonth() {
-                const newDate2 = new Date();
-                let m = this.months[newDate2.getMonth()];
+            currentDay(){
+                const current = new Date();
+                const dayN = current.getDay();
+                const num = current.getDate();
                 
-                const month = `${m} ${newDate2.getFullYear()}`;
+                if(dayN == 0)this.day='Domenica';
+                if(dayN == 1)this.day='Lunedì';
+                if(dayN == 2)this.day='Martedì';
+                if(dayN == 3)this.day='Mercoledì';
+                if(dayN == 4)this.day='Giovedì';
+                if(dayN == 5)this.day='Venerdì';
+                if(dayN == 6)this.day='Sabato';
+                
+                const dayNum = this.day +' '+ num;
+                return dayNum;
+            },
+            currentMonth(){
+                const newDate = new Date();
+                let m = this.months[newDate.getMonth()];
+                
+                const month = `${m} ${newDate.getFullYear()}`;
                 return month
             },
             addTask(){
@@ -73,6 +70,12 @@ const app = new Vue(
             showTaskBox(){
                 document.getElementById("task-box").className = 'op-1 add-task-request';
                 document.getElementById("layover").className = 'lay-active';
+                
+                //focus on layover input
+                const input = this.$refs.text;
+                window.setTimeout(function(){
+                    input.focus();
+                }, 500);
             },
             hideTaskBox(){
                 document.getElementById("task-box").className = 'op-0';
